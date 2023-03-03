@@ -1,4 +1,3 @@
-mergesort_cnt = 0
 merge_two_section_cnt = 0
 
 def MergeTwoSection(unsorted_list,start,mid,end):
@@ -25,9 +24,6 @@ def MergeTwoSection(unsorted_list,start,mid,end):
             if rightIdx > end:
                 tempIdx = i + 1
                 break
-    print('\n\n')
-    print(f'temp_list = {temp_list}')
-    print('\n\n')
     if leftIdx > mid:
         for i in range(rightIdx,end+1):
             temp_list[tempIdx] = unsorted_list[i]
@@ -36,9 +32,6 @@ def MergeTwoSection(unsorted_list,start,mid,end):
         for i in range(leftIdx,mid+1):
             temp_list[tempIdx] = unsorted_list[i]
             tempIdx +=1
-    print('\n\n')
-    print(f'temp_list = {temp_list}')
-    print('\n\n')
     tempIdx = 0
     for i in range(start,end+1):
         unsorted_list[i] = temp_list[tempIdx]
@@ -51,7 +44,7 @@ def MergeSort(unsorted_list,start,end):
     MergeSort(unsorted_list,start,mid)
     MergeSort(unsorted_list,mid+1,end)
     MergeTwoSection(unsorted_list,start,mid,end)
-unsorted = [8,3,7,1,2,6,4,5,32,454,621652,25545,65442324,653454,4343]
+unsorted = [3,8,5,6,1,2,4,7]
 end = len(unsorted) - 1
 start = 0
 MergeSort(unsorted,start,end)
